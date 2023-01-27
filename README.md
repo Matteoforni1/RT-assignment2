@@ -11,7 +11,12 @@ This document contains the information required for the second assignment, which
 
 ## How the code works:
 
+The code is divided into four different c++ nodes. These nodes are the following ones:
 
+- The publisher node: this node 
+- The subscriber node
+- The action client node
+- The service node
 
 ## Pseudocode:
 
