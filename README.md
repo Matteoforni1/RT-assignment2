@@ -24,7 +24,8 @@ If the user presses 'p', this node will use a service, calling the Service Node 
 If the user presses 'e', the node will terminate its execution, displying a 'bye bye' message.
 If the user presses any other button, an error alert message will be displayed on the terminal and the menù will be reprinted.
 
-- The service node
+- The service node: This node does two things: subscribes to the ```/reaching_goal/result``` topic, in order to get information about the status of the goal set by the action client; if the status is equal to 2, it means that a goal has been cancelled, so the number of goals cancelled is increased by one; if the status is equal to 3, it means that a goal has been reached, so the number of goal reached is increased by one.
+This node also communicates with the action client menù by using a custom service: when the user presses 'p' on the action client menù, the action client node sends a request for a custom service to the service node; the service node will reply by sending to it the number of goals reached and cancelled.
 
 ## Pseudocode:
 
