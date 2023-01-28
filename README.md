@@ -34,7 +34,9 @@ This node also communicates with the action client menù by using a custom servi
 
 ## How to run the code:
 
-
+In order to run this code, you need first of all the ROS noetic version on your computer. To obtain it, you have two choices:
+- You can try to install it on your Ubuntu (22 version), but this is usually the longer way to do it;
+- Alternatively, if you 
 
 ## Possible improvements:
 
