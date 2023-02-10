@@ -39,11 +39,11 @@ In order to run this code, you need first of all the ROS noetic version on your 
 - Alternatively, you can install [Docker](https://docs.docker.com/get-docker/) and then follow the instruction to install ROS at this [link](http://wiki.ros.org/ROS/Installation).
 After you got ROS, you can clone this repository by typing on your terminal: ```git clone https://github.com/Matteoforni1/RT-assignment2```.
 Inside the cloned repository you will find two packages: the package: the ```assignment_2_2022``` package and the ```assignment_2``` package.
-WARNING: Before running the launch files in these packages, be sure to have Xterm installed on your  machine, because it is used in the launch file inside the ```assignment_2``` package.
+WARNING: Before running the launch files in these packages, be sure to have Xterm installed on your machine (you can just type the command ```apt-get install xterm```  on your terminal), because it is used in the launch file inside the ```assignment_2``` package.
 Both these packages contains a launch file that should be run:
 - First run on your terminal the command: ```roslaunch assignment_2_2022 assignment1.launch```, in this way you will generate the simulation environment and the robot, while two windows will spawn: one is Gazebo and the other is Rviz;
 - Then run on your terminal the command: ```roslaunch assignment_2 assignment.launch```, this will spawn four terminal windows: one is the user interface (the action client node), one is the publisher node, one is the service node and the last one publishes information about the average velocities and the distance between the robot and the target (the subscriber node).
-
+After that, you are ready to use the program!
 
 ## Possible improvements:
 
