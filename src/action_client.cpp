@@ -29,8 +29,11 @@ int main (int argc, char **argv) {
 	char decision;
 	bool reached = false;
 	bool finished_before_timeout;
+	actionlib::SimpleClientGoalState state = ac.getState();
+	assignment_2::PlanningGoal goal;
+	ros::ServiceClient client = nh.serviceClient<assignment_2::Goal>("/result");
 	while(ros::ok()) {
-		assignment_2::PlanningGoal goal;
+
 		
 		std::cout<<"Welcome to my program!\n";
 		std::cout<<"Enter 'g' to set a new goal\n";
@@ -40,7 +43,7 @@ int main (int argc, char **argv) {
 		
 		std::cin>>decision;
 		
-		actionlib::SimpleClientGoalState state = ac.getState();
+		state = ac.getState();
 		ROS_INFO("CURRENT STATE: %s",state.toString().c_str());
 		
 		if (decision == 'g') {
@@ -68,7 +71,7 @@ int main (int argc, char **argv) {
 		else if (decision == 'c') {
 			// Check current goal and cancel it
 			
-			actionlib::SimpleClientGoalState state = ac.getState();
+			state = ac.getState();
 			
 			int init = state.toString().compare("LOST");
 			int finish = state.toString().compare("SUCCEEDED");
@@ -83,7 +86,6 @@ int main (int argc, char **argv) {
 			}
 		}
 		else if (decision == 'p') {
-			ros::ServiceClient client = nh.serviceClient<assignment_2::Goal>("/result");
 			assignment_2::Goal num;
 			
 			client.call(num);
