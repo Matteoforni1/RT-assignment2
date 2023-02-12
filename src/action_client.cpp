@@ -61,6 +61,8 @@ int main (int argc, char **argv) {
 		// if the user typed 'g', the program tries to set a new goal
 		if (decision == 'g') {
 			
+			state = ac.getState();
+			
 			// we compare the current state with three possible states that the program can have while we are not pursueing a goal
 			int init = state.toString().compare("LOST");
 			int finish = state.toString().compare("SUCCEEDED");
