@@ -48,3 +48,7 @@ After that, you are ready to use the program!
 ## Possible improvements:
 
 There is some possible improvement to implement into this code:
+
+- On the action server (which is in the assignment_2_2022 package), it happens sometimes that the robot may stuck itself when it is close to the angles of a wall. This problem can be avoided by cancelling the goal if the robot happens to move towards an angle, but the code on the action server can be improved in order to fix the problem.
+- When the user is asked to give the coordinates for setting a new goal, invalid inputs are not handled and they will bug permanently the action client (the only option available is to close and restart the program); so an invalid input handler can be added in the action client.
+- When the user presses 'e' on the action client menù in order to close it, only the action client window will close: the other three terminal windows, Rviz and Gazebo need to be closed manually. To fix this problem, a custom service can be used, such that when the user close the action client menù, the other windows also close.
