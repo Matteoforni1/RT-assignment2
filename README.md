@@ -42,7 +42,7 @@ This node also communicates with the action client menù by using a custom servi
   
   END FUNCTION
 
-  FUNCTION MAIN()
+  FUNCTION main()
 
     initialize the node
     initialize the action client
@@ -107,6 +107,35 @@ This node also communicates with the action client menù by using a custom servi
 
     END WHILE
 
+  END FUNCTION
+  
+
+- Publisher Node:
+
+  import libraries
+  
+  initialize variables
+    
+  FUNCTION myCallback(const nav_msgs::Odometry::ConstPtr& msg)
+    
+    set posx to the x position value taken from /odom
+    set posy to the y position value taken from /odom
+    set velx to the x linear velocity value taken from /odom
+    set velz to the z angular velocity value taken from /odom
+      
+    set the values of the custom message info_robot to the values: posx, posy, velx, velz
+    publish the custom message
+      
+  END FUNCTION
+    
+  FUNCTION main()
+    
+    initialize the node
+      
+    initialize the publisher and the subscriber
+    
+    use ros::spin()
+    
   END FUNCTION
 
 ## How to run the code:
