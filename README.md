@@ -32,80 +32,82 @@ This node also communicates with the action client menù by using a custom servi
 
 - Action Client Node:
 
-import libraries
+  import libraries
 
-FUNCTION printing()
+  FUNCTION printing()
   
-  set the number of reached goal to the reach value of the response
-  set the number of cancelled goal to the canc value of the response
-  print these two numbers
+    set the number of reached goal to the reach value of the response
+    set the number of cancelled goal to the canc value of the response
+    print these two numbers
   
-END FUNCTION
+  END FUNCTION
 
-FUNCTION MAIN()
+  FUNCTION MAIN()
 
-  initialize the node
-  initialize the action client
+    initialize the node
+    initialize the action client
   
-  waiting for the server
+    waiting for the server
   
-  get the current state of the action
-  
-  initialize the service
-  
-  WHILE(True)
-    
-    print the menù
-    take as input the user decision
     get the current state of the action
-    
-    IF the user typed 'g'
-    
-      compare the state string with the possible states: LOST, PREEMPTED and SUCCEEDED
-    
-      IF the user is in one of these three states
-      
-        ask the user to set the goal's coordinates
-        take the two coordinates as inputs
-        set the goal position
-        send the goal
-        
-      ELSE
-      
-        error message printed
-        
-      END IF
-      
-    ELSE IF the user typed 'c'
-    
-      compare the state string with the possible states: LOST, PREEMPTED and SUCCEEDED
-      
-      IF the user is in one of these three states
-      
-        error message printed
-        
-      ELSE
-      
-        cancel the goal
-        
-      END IF
-      
-    ELSE IF the user typed 'p'
-    
-      call for the service
-      call the function printing()
-      
-   ELSE IF the user typed 'e'
-   
-    return (we terminate the execution)
-    
-  ELSE
   
-    error message printed
+    initialize the service
+  
+    WHILE(True)
     
-  END IF
+      print the menù
+      take as input the user decision
+      get the current state of the action
+    
+      IF the user typed 'g'
+    
+        compare the state string with the possible states: LOST, PREEMPTED and SUCCEEDED
+    
+        IF the user is in one of these three states
+      
+          ask the user to set the goal's coordinates
+          take the two coordinates as inputs
+          set the goal position
+          send the goal
+        
+        ELSE
+      
+          error message printed
+        
+        END IF
+      
+      ELSE IF the user typed 'c'
+    
+        compare the state string with the possible states: LOST, PREEMPTED and SUCCEEDED
+      
+        IF the user is in one of these three states
+      
+          error message printed
+        
+        ELSE
+      
+          cancel the goal
+        
+        END IF
+      
+      ELSE IF the user typed 'p'
+    
+        call for the service
+        call the function printing()
+      
+      ELSE IF the user typed 'e'
+   
+        return (we terminate the execution)
+    
+      ELSE
+  
+        error message printed
+    
+      END IF
 
-END FUNCTION
+    END WHILE
+
+  END FUNCTION
 
 ## How to run the code:
 
