@@ -1,0 +1,103 @@
+\hypertarget{service_8cpp}{}\doxysection{src/service.cpp File Reference}
+\label{service_8cpp}\index{src/service.cpp@{src/service.cpp}}
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}assignment\+\_\+2/info\+\_\+robot.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$assignment\+\_\+2/\+Planning\+Action\+Goal.\+h$>$}\newline
+{\ttfamily \#include $<$assignment\+\_\+2\+\_\+2022/\+Planning\+Action\+Result.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}assignment\+\_\+2/\+Goal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Pose.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Point.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}actionlib\+\_\+msgs/\+Goal\+Status.\+h\char`\"{}}\newline
+Include dependency graph for service.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{service_8cpp_a12c51d9c85388beda0385a19c6142c92}{my\+Callback}} (const assignment\+\_\+2\+\_\+2022\+::\+Planning\+Action\+Result\+::\+Const\+Ptr \&msg)
+\item 
+bool \mbox{\hyperlink{service_8cpp_a60dce9f64648129223938dcf5f02ea84}{service\+Callback}} (assignment\+\_\+2\+::\+Goal\+::\+Request \&req, assignment\+\_\+2\+::\+Goal\+::\+Response \&res)
+\item 
+int \mbox{\hyperlink{service_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{service_8cpp_aa099941f1f2fbb595d1fbe609f934876}\label{service_8cpp_aa099941f1f2fbb595d1fbe609f934876}} 
+int \mbox{\hyperlink{service_8cpp_aa099941f1f2fbb595d1fbe609f934876}{n\+\_\+reach}} = 0
+\begin{DoxyCompactList}\small\item\em Number of goal reached. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{service_8cpp_a277a45f2f660a4b72580168551f1e35f}\label{service_8cpp_a277a45f2f660a4b72580168551f1e35f}} 
+int \mbox{\hyperlink{service_8cpp_a277a45f2f660a4b72580168551f1e35f}{n\+\_\+cancel}} = 0
+\begin{DoxyCompactList}\small\item\em Number of goal cancelled. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{service_8cpp_a89f234133d3efe315836311cbf21c64b}\label{service_8cpp_a89f234133d3efe315836311cbf21c64b}} 
+int \mbox{\hyperlink{service_8cpp_a89f234133d3efe315836311cbf21c64b}{state}}
+\begin{DoxyCompactList}\small\item\em Current state of the goal (each state correspond to an integer) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\textbackslash{}service for the second assignment of Research Track 1 \begin{DoxyAuthor}{Author}
+Matteo Forni 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+24/05/2023
+\end{DoxyDate}
+Subscribes to \+: ~\newline
+ ° /reaching\+\_\+goal/result
+
+Services \+: ~\newline
+ ° /result
+
+Description \+:
+
+This node is the server side of the custom service implemented in the second assignment. This node subscribes to the \textquotesingle{}/reaching\+\_\+goal/result\textquotesingle{} topic, in order to obtain information about the current status of the goal. When a goal is reached or cancelled, the number of goals reached or cancelled is raised by one unit. When the client calls for the service, these two numbers are passed to the client, so that it can prints them on the terminal. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{service_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{service_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{service.cpp@{service.cpp}!main@{main}}
+\index{main@{main}!service.cpp@{service.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+Description of the \mbox{\hyperlink{service_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main()}} function\+:
+
+This function does not take any parameter
+
+It does not return anything
+
+This function initialise the node, the service server and the subscriber. Then, through the ros\+::spin() method, it waits for something to be published on the \textquotesingle{}/reaching\+\_\+goal/result\textquotesingle{} topic or for being called by the client service. \mbox{\Hypertarget{service_8cpp_a12c51d9c85388beda0385a19c6142c92}\label{service_8cpp_a12c51d9c85388beda0385a19c6142c92}} 
+\index{service.cpp@{service.cpp}!myCallback@{myCallback}}
+\index{myCallback@{myCallback}!service.cpp@{service.cpp}}
+\doxysubsubsection{\texorpdfstring{myCallback()}{myCallback()}}
+{\footnotesize\ttfamily void my\+Callback (\begin{DoxyParamCaption}\item[{const assignment\+\_\+2\+\_\+2022\+::\+Planning\+Action\+Result\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+Description of the \mbox{\hyperlink{service_8cpp_a12c51d9c85388beda0385a19c6142c92}{my\+Callback()}} function\+:
+
+This function takes a Planning\+Action\+Result message as parameter
+
+It does not return anything
+
+This function takes the current state of the goal from the Planning\+Action\+Result message. Then, if the state has been cancelled, the number of goal cancelled is raised. If the goal has been reached instead, the number of goal reached is raised. \mbox{\Hypertarget{service_8cpp_a60dce9f64648129223938dcf5f02ea84}\label{service_8cpp_a60dce9f64648129223938dcf5f02ea84}} 
+\index{service.cpp@{service.cpp}!serviceCallback@{serviceCallback}}
+\index{serviceCallback@{serviceCallback}!service.cpp@{service.cpp}}
+\doxysubsubsection{\texorpdfstring{serviceCallback()}{serviceCallback()}}
+{\footnotesize\ttfamily bool service\+Callback (\begin{DoxyParamCaption}\item[{assignment\+\_\+2\+::\+Goal\+::\+Request \&}]{req,  }\item[{assignment\+\_\+2\+::\+Goal\+::\+Response \&}]{res }\end{DoxyParamCaption})}
+
+Description of the \mbox{\hyperlink{service_8cpp_a60dce9f64648129223938dcf5f02ea84}{service\+Callback()}} function\+:
+
+This function takes the Goal request and response as parameters
+
+It always return True
+
+This is the callback function for the service \textquotesingle{}/result\textquotesingle{}, which send to the client the number of goal reached and cancelled. This function set as response to send to the client the number of goal reached and cancelled. 

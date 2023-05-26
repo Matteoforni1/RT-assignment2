@@ -1,0 +1,143 @@
+\hypertarget{subscriber_8cpp}{}\doxysection{src/subscriber.cpp File Reference}
+\label{subscriber_8cpp}\index{src/subscriber.cpp@{src/subscriber.cpp}}
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}assignment\+\_\+2/info\+\_\+robot.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$assignment\+\_\+2/\+Planning\+Action\+Goal.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Pose.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Point.\+h\char`\"{}}\newline
+Include dependency graph for subscriber.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{subscriber_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{subscriber_8cpp_aff66c3558b66f6c68d09239d8316f59f}{my\+Callback}} (const assignment\+\_\+2\+::info\+\_\+robot\+::\+Const\+Ptr \&msg)
+\item 
+void \mbox{\hyperlink{subscriber_8cpp_a7eeaa33fdca134355772b1d8c87e07cb}{my\+Callback2}} (const assignment\+\_\+2\+::\+Planning\+Action\+Goal\+::\+Const\+Ptr \&msg)
+\item 
+void \mbox{\hyperlink{subscriber_8cpp_ab21b35036b7111cc0864050646cccec6}{distance}} ()
+\item 
+int \mbox{\hyperlink{subscriber_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{subscriber_8cpp_a6e4e14dd35056ac46e45b4a001ee9e54}\label{subscriber_8cpp_a6e4e14dd35056ac46e45b4a001ee9e54}} 
+double \mbox{\hyperlink{subscriber_8cpp_a6e4e14dd35056ac46e45b4a001ee9e54}{px\+\_\+r}}
+\begin{DoxyCompactList}\small\item\em X coordinate of current robot position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_a20f70a54469ea73086882b134384aa91}\label{subscriber_8cpp_a20f70a54469ea73086882b134384aa91}} 
+double \mbox{\hyperlink{subscriber_8cpp_a20f70a54469ea73086882b134384aa91}{py\+\_\+r}}
+\begin{DoxyCompactList}\small\item\em Y coordinate of current robot position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_a8f569fe538ec6790e7b4473528a4465e}\label{subscriber_8cpp_a8f569fe538ec6790e7b4473528a4465e}} 
+double \mbox{\hyperlink{subscriber_8cpp_a8f569fe538ec6790e7b4473528a4465e}{px\+\_\+g}}
+\begin{DoxyCompactList}\small\item\em X coordinate of current goal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_ab64f9e4b5406b237bcc0f01f5b3896b6}\label{subscriber_8cpp_ab64f9e4b5406b237bcc0f01f5b3896b6}} 
+double \mbox{\hyperlink{subscriber_8cpp_ab64f9e4b5406b237bcc0f01f5b3896b6}{py\+\_\+g}}
+\begin{DoxyCompactList}\small\item\em Y coordinate of current goal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_a2d31cc80a747457c212675a58c68b2b1}\label{subscriber_8cpp_a2d31cc80a747457c212675a58c68b2b1}} 
+double \mbox{\hyperlink{subscriber_8cpp_a2d31cc80a747457c212675a58c68b2b1}{vx}}
+\begin{DoxyCompactList}\small\item\em Robot\textquotesingle{}s current linear velocity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_a7eddee930e55c61ba8cd3506c1ac5fc1}\label{subscriber_8cpp_a7eddee930e55c61ba8cd3506c1ac5fc1}} 
+double \mbox{\hyperlink{subscriber_8cpp_a7eddee930e55c61ba8cd3506c1ac5fc1}{vz}}
+\begin{DoxyCompactList}\small\item\em Robot\textquotesingle{}s current angular velocity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_aca0b73a2200c3ca01b6e601bbce23767}\label{subscriber_8cpp_aca0b73a2200c3ca01b6e601bbce23767}} 
+double \mbox{\hyperlink{subscriber_8cpp_aca0b73a2200c3ca01b6e601bbce23767}{gdx}}
+\begin{DoxyCompactList}\small\item\em Distance along the x axis between current robot position and current goal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_a7699cd7c797e8c19155810ec218a312e}\label{subscriber_8cpp_a7699cd7c797e8c19155810ec218a312e}} 
+double \mbox{\hyperlink{subscriber_8cpp_a7699cd7c797e8c19155810ec218a312e}{gdy}}
+\begin{DoxyCompactList}\small\item\em Distance along the y axis between current robot position and current goal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_a83f47959cee89b4ff26b31a588fc3d67}\label{subscriber_8cpp_a83f47959cee89b4ff26b31a588fc3d67}} 
+double \mbox{\hyperlink{subscriber_8cpp_a83f47959cee89b4ff26b31a588fc3d67}{avg\+\_\+speed\+\_\+x}} = 0
+\begin{DoxyCompactList}\small\item\em Average linear speed of the robot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_abed1997d0c4b096c3139b1f3216dc6a6}\label{subscriber_8cpp_abed1997d0c4b096c3139b1f3216dc6a6}} 
+double \mbox{\hyperlink{subscriber_8cpp_abed1997d0c4b096c3139b1f3216dc6a6}{avg\+\_\+speed\+\_\+z}} = 0
+\begin{DoxyCompactList}\small\item\em Average angular speed of the robot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_a023af5e638d36dc70a1b7de9126396de}\label{subscriber_8cpp_a023af5e638d36dc70a1b7de9126396de}} 
+int \mbox{\hyperlink{subscriber_8cpp_a023af5e638d36dc70a1b7de9126396de}{n\+\_\+sub}} = 0
+\begin{DoxyCompactList}\small\item\em Number of subscriptions, used tom compute average velocities. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_a3e3c4709f4138fc528fcbacd3cba65dc}\label{subscriber_8cpp_a3e3c4709f4138fc528fcbacd3cba65dc}} 
+double \mbox{\hyperlink{subscriber_8cpp_a3e3c4709f4138fc528fcbacd3cba65dc}{publish\+\_\+rate}}
+\begin{DoxyCompactList}\small\item\em Rate at which the node publishes its information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\textbackslash{}subscriber for the second assignment of Research Track 1 \begin{DoxyAuthor}{Author}
+Matteo Forni 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+24/05/2023
+\end{DoxyDate}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em publish\+\_\+rate} & Define the rate at which the subscriber publishes on the terminal the information it got.\\
+\hline
+\end{DoxyParams}
+Subscribes to\+: ~\newline
+ ° /reaching\+\_\+goal/goal ° /my\+\_\+info
+
+Description \+:
+
+This node subscribes to the topic \textquotesingle{}/odom\textquotesingle{}, to retrieve information about the robot\textquotesingle{}s current position and velocity. Then this node publishes the information gathered on the topic \textquotesingle{}/my\+\_\+info\textquotesingle{} 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{subscriber_8cpp_ab21b35036b7111cc0864050646cccec6}\label{subscriber_8cpp_ab21b35036b7111cc0864050646cccec6}} 
+\index{subscriber.cpp@{subscriber.cpp}!distance@{distance}}
+\index{distance@{distance}!subscriber.cpp@{subscriber.cpp}}
+\doxysubsubsection{\texorpdfstring{distance()}{distance()}}
+{\footnotesize\ttfamily void distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Description of the \mbox{\hyperlink{subscriber_8cpp_ab21b35036b7111cc0864050646cccec6}{distance()}} function\+:
+
+This function does not take any parameter
+
+It does not return anything
+
+This function takes the robot and goal\textquotesingle{}s x and y positions and compute its difference. Then, it publishes them on the terminal. \mbox{\Hypertarget{subscriber_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{subscriber_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{subscriber.cpp@{subscriber.cpp}!main@{main}}
+\index{main@{main}!subscriber.cpp@{subscriber.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+Description of the \mbox{\hyperlink{subscriber_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main()}} function\+:
+
+This function does not take any parameter
+
+It does not return anything
+
+This function initialise the node, two subscribers and takes one parameter from the launch file (the publish rate). Then, through the ros\+::spin() method, it waits for some data to be published on the topic to which it has done a subscription. \mbox{\Hypertarget{subscriber_8cpp_aff66c3558b66f6c68d09239d8316f59f}\label{subscriber_8cpp_aff66c3558b66f6c68d09239d8316f59f}} 
+\index{subscriber.cpp@{subscriber.cpp}!myCallback@{myCallback}}
+\index{myCallback@{myCallback}!subscriber.cpp@{subscriber.cpp}}
+\doxysubsubsection{\texorpdfstring{myCallback()}{myCallback()}}
+{\footnotesize\ttfamily void my\+Callback (\begin{DoxyParamCaption}\item[{const assignment\+\_\+2\+::info\+\_\+robot\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+Description of the \mbox{\hyperlink{subscriber_8cpp_aff66c3558b66f6c68d09239d8316f59f}{my\+Callback()}} function\+:
+
+This function takes an info\+\_\+robot message as parameter
+
+It does not return anything
+
+This function takes from the info\+\_\+robot message the robot\textquotesingle{}s current position and velocity. Then, it uses these informations to compute the average speeds and the current distance to the goal. To conclude, it publishes the average velocity on the terminal. \mbox{\Hypertarget{subscriber_8cpp_a7eeaa33fdca134355772b1d8c87e07cb}\label{subscriber_8cpp_a7eeaa33fdca134355772b1d8c87e07cb}} 
+\index{subscriber.cpp@{subscriber.cpp}!myCallback2@{myCallback2}}
+\index{myCallback2@{myCallback2}!subscriber.cpp@{subscriber.cpp}}
+\doxysubsubsection{\texorpdfstring{myCallback2()}{myCallback2()}}
+{\footnotesize\ttfamily void my\+Callback2 (\begin{DoxyParamCaption}\item[{const assignment\+\_\+2\+::\+Planning\+Action\+Goal\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+Description of the \mbox{\hyperlink{subscriber_8cpp_a7eeaa33fdca134355772b1d8c87e07cb}{my\+Callback2()}} function\+:
+
+This function takes a Planning\+Action\+Goal message as parameter
+
+It does not return anything
+
+This function takes from the Planning\+Action\+Goal message the current goal position. 

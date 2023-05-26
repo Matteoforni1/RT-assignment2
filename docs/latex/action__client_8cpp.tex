@@ -1,0 +1,90 @@
+\hypertarget{action__client_8cpp}{}\doxysection{src/action\+\_\+client.cpp File Reference}
+\label{action__client_8cpp}\index{src/action\_client.cpp@{src/action\_client.cpp}}
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$actionlib/client/simple\+\_\+action\+\_\+client.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/terminal\+\_\+state.\+h$>$}\newline
+{\ttfamily \#include $<$assignment\+\_\+2/\+Planning\+Action.\+h$>$}\newline
+{\ttfamily \#include $<$assignment\+\_\+2/\+Planning\+Action\+Goal.\+h$>$}\newline
+{\ttfamily \#include $<$assignment\+\_\+2\+\_\+2022/\+Planning\+Action\+Result.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}assignment\+\_\+2/\+Goal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}actionlib\+\_\+msgs/\+Goal\+Status.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Pose.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Point.\+h\char`\"{}}\newline
+Include dependency graph for action\+\_\+client.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{action__client_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{action__client_8cpp_a9ffe2fced00dd42867bb463a7f5f177f}{printing}} ()
+\item 
+int \mbox{\hyperlink{action__client_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{action__client_8cpp_a7fcd06599fe7d1f0134f6da5e0a7a3c3}\label{action__client_8cpp_a7fcd06599fe7d1f0134f6da5e0a7a3c3}} 
+double \mbox{\hyperlink{action__client_8cpp_a7fcd06599fe7d1f0134f6da5e0a7a3c3}{posx}}
+\begin{DoxyCompactList}\small\item\em X coordinate of current goal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{action__client_8cpp_abd9a302389061fb89241589f6431634a}\label{action__client_8cpp_abd9a302389061fb89241589f6431634a}} 
+double \mbox{\hyperlink{action__client_8cpp_abd9a302389061fb89241589f6431634a}{posy}}
+\begin{DoxyCompactList}\small\item\em Y coordinate of current goal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{action__client_8cpp_aa099941f1f2fbb595d1fbe609f934876}\label{action__client_8cpp_aa099941f1f2fbb595d1fbe609f934876}} 
+int \mbox{\hyperlink{action__client_8cpp_aa099941f1f2fbb595d1fbe609f934876}{n\+\_\+reach}}
+\begin{DoxyCompactList}\small\item\em Number of goals reached. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{action__client_8cpp_afb33398c8da0f2650e9f402cbf98387e}\label{action__client_8cpp_afb33398c8da0f2650e9f402cbf98387e}} 
+int \mbox{\hyperlink{action__client_8cpp_afb33398c8da0f2650e9f402cbf98387e}{n\+\_\+canc}}
+\begin{DoxyCompactList}\small\item\em Number of goals cancelled. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{action__client_8cpp_af23247f6ba6e83c93f53417ab632f615}\label{action__client_8cpp_af23247f6ba6e83c93f53417ab632f615}} 
+assignment\+\_\+2\+::\+Goal \mbox{\hyperlink{action__client_8cpp_af23247f6ba6e83c93f53417ab632f615}{num}}
+\begin{DoxyCompactList}\small\item\em It is passed to the service client and it will return containing the desired values inside its response fields. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\textbackslash{}action client for the second assignment of Research Track 1 \begin{DoxyAuthor}{Author}
+Matteo Forni 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+24/05/2023
+\end{DoxyDate}
+Services \+: ~\newline
+ ° /result
+
+Description \+:
+
+This node is the action client and user interface for the second assignment of the course Research Track 1. This Node implements a user interface through a menù which is printed on the terminal. The user is aked to type one of four commands\+: to set a new goal, to cancel the current one, to print the number of reached and cancelled goals and to terminate the execution. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{action__client_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{action__client_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{action\_client.cpp@{action\_client.cpp}!main@{main}}
+\index{main@{main}!action\_client.cpp@{action\_client.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+Description of the \mbox{\hyperlink{action__client_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main()}} function\+:
+
+This function does not take any parameter
+
+It does not return anything
+
+This function prints a menù, where the user is asked to insert a command from keyboard. If the user presses \textquotesingle{}g\textquotesingle{}, then the coordinates for a new goal will be asked; once entered, this node (as an action client) send the goal coordinates to the action server node. If the user presses \textquotesingle{}c\textquotesingle{}, we cancel the current action, which is the pursuit of a goal. In both cases, it is checked that when we set a goal, no goal is currently active and when we cancel a goal, there is actually a goal to cancel. If the user presses \textquotesingle{}p\textquotesingle{}, we use the service node to retrieve the number of goal reached and cancelled and then we print them. If the user presses \textquotesingle{}e\textquotesingle{}, we terminate the execution. \mbox{\Hypertarget{action__client_8cpp_a9ffe2fced00dd42867bb463a7f5f177f}\label{action__client_8cpp_a9ffe2fced00dd42867bb463a7f5f177f}} 
+\index{action\_client.cpp@{action\_client.cpp}!printing@{printing}}
+\index{printing@{printing}!action\_client.cpp@{action\_client.cpp}}
+\doxysubsubsection{\texorpdfstring{printing()}{printing()}}
+{\footnotesize\ttfamily void printing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Description of the \mbox{\hyperlink{action__client_8cpp_a9ffe2fced00dd42867bb463a7f5f177f}{printing()}} function\+:
+
+This function does not take any parameter
+
+It does not return anything
+
+This function takes from the service node\textquotesingle{}s response the number of goals reached and cancelled and prints them on the terminal 

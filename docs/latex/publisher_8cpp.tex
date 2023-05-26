@@ -1,0 +1,89 @@
+\hypertarget{publisher_8cpp}{}\doxysection{src/publisher.cpp File Reference}
+\label{publisher_8cpp}\index{src/publisher.cpp@{src/publisher.cpp}}
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nav\+\_\+msgs/\+Odometry.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}assignment\+\_\+2/info\+\_\+robot.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Include dependency graph for publisher.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{publisher_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{publisher_8cpp_a47e9ad161b3ce5263fd2f8005045d9b6}{my\+Callback}} (const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&msg)
+\item 
+int \mbox{\hyperlink{publisher_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{publisher_8cpp_a7fcd06599fe7d1f0134f6da5e0a7a3c3}\label{publisher_8cpp_a7fcd06599fe7d1f0134f6da5e0a7a3c3}} 
+double \mbox{\hyperlink{publisher_8cpp_a7fcd06599fe7d1f0134f6da5e0a7a3c3}{posx}}
+\begin{DoxyCompactList}\small\item\em X coordinate of current robot position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{publisher_8cpp_abd9a302389061fb89241589f6431634a}\label{publisher_8cpp_abd9a302389061fb89241589f6431634a}} 
+double \mbox{\hyperlink{publisher_8cpp_abd9a302389061fb89241589f6431634a}{posy}}
+\begin{DoxyCompactList}\small\item\em Y coordinate of current robot position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{publisher_8cpp_a2997d5bde770e38add3c83ec0021ee5e}\label{publisher_8cpp_a2997d5bde770e38add3c83ec0021ee5e}} 
+double \mbox{\hyperlink{publisher_8cpp_a2997d5bde770e38add3c83ec0021ee5e}{velx}}
+\begin{DoxyCompactList}\small\item\em Current linear velocity of the robot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{publisher_8cpp_ad618ff263355cd05ed6e5cd45af41a00}\label{publisher_8cpp_ad618ff263355cd05ed6e5cd45af41a00}} 
+double \mbox{\hyperlink{publisher_8cpp_ad618ff263355cd05ed6e5cd45af41a00}{velz}}
+\begin{DoxyCompactList}\small\item\em Current angular velocity of the robot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{publisher_8cpp_a350594df3e8f6948c8462edfd41ce086}\label{publisher_8cpp_a350594df3e8f6948c8462edfd41ce086}} 
+ros\+::\+Publisher \mbox{\hyperlink{publisher_8cpp_a350594df3e8f6948c8462edfd41ce086}{pub}}
+\begin{DoxyCompactList}\small\item\em Publisher for this node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\textbackslash{}publisher for the second assignment of Research Track 1 \begin{DoxyAuthor}{Author}
+Matteo Forni 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+24/05/2023
+\end{DoxyDate}
+Subscribes to\+: ~\newline
+ ° /odom
+
+Publishes to\+: ~\newline
+ ° /my\+\_\+info
+
+Description \+:
+
+This node subscribes to the topic \textquotesingle{}/odom\textquotesingle{}, to retrieve information about the robot\textquotesingle{}s current position and velocity. Then this node publishes the information gathered on the topic \textquotesingle{}/my\+\_\+info\textquotesingle{} 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{publisher_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{publisher_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{publisher.cpp@{publisher.cpp}!main@{main}}
+\index{main@{main}!publisher.cpp@{publisher.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+Description of the \mbox{\hyperlink{publisher_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main()}} function\+:
+
+This function does not take any parameter
+
+It does not return anything
+
+This function initialise the node, the publisher and the subscriber. Then, using the ros\+::spin() method, the node waits for new messages to be published on some topic. \mbox{\Hypertarget{publisher_8cpp_a47e9ad161b3ce5263fd2f8005045d9b6}\label{publisher_8cpp_a47e9ad161b3ce5263fd2f8005045d9b6}} 
+\index{publisher.cpp@{publisher.cpp}!myCallback@{myCallback}}
+\index{myCallback@{myCallback}!publisher.cpp@{publisher.cpp}}
+\doxysubsubsection{\texorpdfstring{myCallback()}{myCallback()}}
+{\footnotesize\ttfamily void my\+Callback (\begin{DoxyParamCaption}\item[{const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+Description of the \mbox{\hyperlink{publisher_8cpp_a47e9ad161b3ce5263fd2f8005045d9b6}{my\+Callback()}} function\+:
+
+This function takes an Odometry message as parameter
+
+It does not return anything
+
+This function is the callback function for the subscriber to the topic \textquotesingle{}/odom\textquotesingle{}. This function retrieves from the Odometry message the current robot position and velocity (both linear and angular). Then we create an info\+\_\+robot message, where we put the information mentioned above and then we publish this message on the topic \textquotesingle{}/my\+\_\+info\textquotesingle{}. 
